@@ -21,7 +21,7 @@ This program depends on:
 <li>requests</li>
 </ul>
 
-If you do not have pip installed on your platform, follow the installation instructions here. Alternatively, you can install Anaconda.
+If you do not have pip installed on your platform, follow the installation instructions [here](https://pip.pypa.io/en/latest/installing.html#install-or-upgrade-pip). Alternatively, you can install [Anaconda](https://www.continuum.io/downloads).
 
 <b>To install boto3:</b>
 Sudo pip install boto3
@@ -64,11 +64,11 @@ The program contains two required arguments.
 <h3>Required arguments</h3>
 <ul>
 <li><b>Local Directory</b> is the path to the local directory which contains the local files to be transferred.</li>
-<li><b>Bucket Name</b> is the name of the destination S3 bucket. Please ensure that this name is unique and has not been used for other S3 buckets in your aws console.</li>
-
+<li><b>Bucket Name</b> is the name of the destination S3 bucket. Please ensure that this name is unique and has not been used for other S3 buckets in your aws console.</li></ul>
 
 
 <h3>Optional arguments</h3>
+<ul>
 <li><b>File extension </b> is the extensions of the files in Local Directory that need to be transfered. Extensions should be separated by ',' only. If FILES_EXTENSION is not specified, all files in the directory are uploaded (except files whose names start with '.'). Although all file types will be uploaded to the S3 bucket, this program is meant for uploading files with csv format.</li>
 </ul>
 
@@ -91,7 +91,34 @@ python uploader.py "/Users/folder " "vital-signs" -ext "csv"
 
 <h3> Downloading coursera files</h3>
 
-<p>You can use Coursera scheduled exports to request data exports for one or multiple courses and download them with a single command. After, downloading the required files, Data uploader to redshift cluster can be used as the next step.</p>
+<p>You can use the project [Coursera scheduled exports](https://github.com/LU-C4i/coursera-scheduled-exports) to request data exports for one or multiple courses and download them with a single command. Note that only data coordinators can currently use this program, as it requests full exports including partner-level ids and clickstream data.
+
+In your specified location, Coursera scheduled exports will create a folder, with multiple subfolders for each course_slug containing all the course files. If you are interested in uploading multiple folders to the redshift using Data Uploader to Redshift Cluster, merging all the subfolders is required. This is becasue the program uploads files from one folder only; subfolders are ignored.
+
+To merge all the subfolders use the [merge.py]() program, included in this repository. 
+
+<h3>Merging subfolders into one folder</h3>
+
+<p> The program [merge.py]() contains two required arguments.</p>
+
+<h4>Required arguments</h4>
+<ul>
+<li><b>Source Directory</b> is the path to the directory which contains subfolders to be merged.</li>
+<li><b>Destination Directory</b> is the name of the destination directory. All the files from the source directory will be moved to this directory. </li>
+
+<h4>Execute:</h4>
+
+```
+merge.py /path/to/source /path/to/destination
+```
+
+<h4>Example:</h4>
+
+```
+python merge.py "/Users/sourcefolder" "/Users/destfolder"
+```
+
+After, downloading the required files, and merging the required subfolders, Data uploader to redshift cluster can be used as the final step.</p>
 
 <h3>Scheduling downloads</h3>
 
