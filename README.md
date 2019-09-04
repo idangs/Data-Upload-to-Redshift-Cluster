@@ -99,7 +99,7 @@ To merge all the subfolders use the [merge.py]() program, included in this repos
 
 <h3>Merging subfolders into one folder</h3>
 
-<p> The program [merge.py]() contains two required arguments.</p>
+<p> The program <b>merge.py</b> contains two required arguments.</p>
 
 <h4>Required arguments</h4>
 <ul>
