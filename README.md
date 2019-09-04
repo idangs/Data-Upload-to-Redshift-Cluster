@@ -104,7 +104,7 @@ To merge all the subfolders use the [merge.py]() program, included in this repos
 <h4>Required arguments</h4>
 <ul>
 <li><b>Source Directory</b> is the path to the directory which contains subfolders to be merged.</li>
-<li><b>Destination Directory</b> is the name of the destination directory. All the files from the source directory will be moved to this directory. </li>
+<li><b>Destination Directory</b> is the name of the destination directory. All the files from the source directory will be moved to this directory. </li></ul>
 
 <h4>Execute:</h4>
 
@@ -118,7 +118,7 @@ merge.py /path/to/source /path/to/destination
 python merge.py "/Users/sourcefolder" "/Users/destfolder"
 ```
 
-After, downloading the required files, and merging the required subfolders, Data uploader to redshift cluster can be used as the final step.</p>
+After, downloading the required files, and merging the required subfolders, Data uploader to redshift cluster can be used as the final step.
 
 <h3>Scheduling downloads</h3>
 
