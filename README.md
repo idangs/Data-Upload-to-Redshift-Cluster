@@ -91,7 +91,7 @@ python uploader.py "/Users/folder " "vital-signs" -ext "csv"
 
 <h3> Downloading coursera files</h3>
 
-<p>You can use the project [Coursera scheduled exports](https://github.com/LU-C4i/coursera-scheduled-exports) to request data exports for one or multiple courses and download them with a single command. Note that only data coordinators can currently use this program, as it requests full exports including partner-level ids and clickstream data.
+You can use the project [Coursera scheduled exports](https://github.com/LU-C4i/coursera-scheduled-exports) to request data exports for one or multiple courses and download them with a single command. Note that only data coordinators can currently use this program, as it requests full exports including partner-level ids and clickstream data.
 
 In your specified location, Coursera scheduled exports will create a folder, with multiple subfolders for each course_slug containing all the course files. If you are interested in uploading multiple folders to the redshift using Data Uploader to Redshift Cluster, merging all the subfolders is required. This is becasue the program uploads files from one folder only; subfolders are ignored.
 
