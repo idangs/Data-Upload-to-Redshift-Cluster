@@ -95,7 +95,7 @@ You can use the project [Coursera scheduled exports](https://github.com/LU-C4i/c
 
 In your specified location, Coursera scheduled exports will create a folder, with multiple subfolders for each course_slug containing all the course files. If you are interested in uploading multiple folders to the redshift using Data Uploader to Redshift Cluster, merging all the subfolders is required. This is becasue the program uploads files from one folder only; subfolders are ignored.
 
-To merge all the subfolders use the [merge.py]() program, included in this repository. 
+To merge all the subfolders use the [merge.py](https://github.com/idangs/Data-Upload-to-Redshift-Cluster/blob/master/merge.py) program, included in this repository. 
 
 <h3>Merging subfolders into one folder</h3>
 
